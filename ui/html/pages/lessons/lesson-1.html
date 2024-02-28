@@ -1,0 +1,276 @@
+{{define "title"}}lesson-1{{end}}
+
+{{define "jss"}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"
+    charset="utf-8"></script>
+<script src="/static/js/lesson.js" type="text/javascript" charset="utf-8"></script>
+<script src="/static/js/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="/static/js/skulpt/skulpt.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/static/js/skulpt/skulpt-stdlib.js" type="text/javascript" charset="utf-8"></script>
+{{end}}
+
+{{define "css"}}
+<link rel="stylesheet" href="/static/css/lesson.css" />{{end}}
+{{define "main"}}
+<div class="hero" style="background-color: #7A7A89;">
+    <span>Lists</span>
+</div>
+<div class="objectives">
+    <div class="card">
+        <span class="heading">What you will learn in this lesson...</span>
+        <ul>
+            <li>Basics of lists</li>
+            <li>Creating, accessing, modifying and manipulating lists.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="content">
+    <div class="note-cont">
+        <span class="topic">Lists...</span>
+        <p>
+            In Python, lists are one of the most commonly used data structures. They allow you to store and manipulate
+            collections of items efficiently. we'll cover the basics of Python lists, including how to create,
+            access, modify, and manipulate them.
+        </p>
+        <span class="topic">What is a list?</span>
+        <p>
+            A list in Python is an ordered collection of items. These items can be of any data type, including integers,
+            strings, floats, or even other lists. Lists are mutable, meaning you can change their contents after they
+            are created.
+        </p>
+        <span class="topic">Creating lists...</span>
+        <p>
+            You can create a list in Python by enclosing a comma-separated sequence of items within square brackets [].
+            Here's how you can create a simple list:
+        </p>
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_1">
+numbers = [1, 2, 3, 4, 5]
+
+# Creating a list of strings
+fruits = ["apple", "banana", "orange"]
+
+# Creating a mixed-type list
+mixed_list = [1, "hello", 3.14, True]
+        </pre>
+        <div id="runner1" class="runner" style="display: none;">
+            <pre id="output1" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="1">Run Code</button>
+    </div>
+
+    <div class="note-cont">
+        <span class="topic">
+            Accessing Elements
+        </span>
+        <p>
+            You can access individual elements of a list using square brackets [] and specifying the index of the
+            element you want to access. Remember, Python uses zero-based indexing, meaning the index of the first
+            element is 0, the second element is 1, and so on.
+        </p>
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_2">
+fruits = ["apple", "banana", "orange"]
+
+print(fruits[0])  # Output: "apple"
+print(fruits[1])  # Output: "banana"
+print(fruits[2])  # Output: "orange"
+        </pre>
+        <div id="runner2" class="runner" style="display: none;">
+            <pre id="output2" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="2">Run Code</button>
+    </div>
+
+    <div class="note-cont">
+        You can also use negative indices to access elements from the end of the list:
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_3">
+fruits = ["apple", "banana", "orange"] 
+
+print(fruits[-1])  # Output: "orange"
+print(fruits[-2])  # Output: "banana"
+        </pre>
+        <div id="runner3" class="runner" style="display: none;">
+            <pre id="output3" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="3">Run Code</button>
+    </div>
+
+    <div class="note-cont">
+        <span class="topic">
+            List Slicing
+        </span>
+        <p>List slicing allows you to access a sublist of elements from a list. You specify a start index and an end
+            index, separated by a colon :. Python will return a new list containing elements from the start index up to,
+            but not including, the end index.</p>
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_4">
+numbers = [1, 2, 3, 4, 5]
+
+print(numbers[1:4])  # Output: [2, 3, 4]
+print(numbers[:3])   # Output: [1, 2, 3]
+print(numbers[2:])   # Output: [3, 4, 5]
+        </pre>
+        <div id="runner4" class="runner" style="display: none;">
+            <pre id="output4" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="4">Run Code</button>
+    </div>
+    <div class="note-cont">
+        <span class="topic">Modifying Lists</span>
+        <p>Lists are mutable, which means you can change their contents after they are created. You can modify
+            individual elements, append new elements, remove elements, and more.</p>
+        <span class="topic">Modifying Elements</span>
+        <p>You can modify the value of a specific element by assigning a new value to it using its index.</p>
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_5">
+fruits = ["apple", "banana", "orange"]
+fruits[1] = "grape"
+print(fruits)  # Output: ["apple", "grape", "orange"]
+        </pre>
+        <div id="runner5" class="runner" style="display: none;">
+            <pre id="output5" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="5">Run Code</button>
+    </div>
+
+    <div class="note-cont">
+        <span class="topic">Appending Elements</span>
+        <p>You can add new elements to the end of a list using the <code>append()</code> method.</p>
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_6">
+fruits = ["apple", "banana", "orange"]
+fruits.append("kiwi")
+print(fruits)  # Output: ["apple", "banana", "orange", "kiwi"]
+        </pre>
+        <div id="runner6" class="runner" style="display: none;">
+            <pre id="output6" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="6">Run Code</button>
+    </div>
+
+    <div class="note-cont">
+        <span class="topic">Removing Elements</span>
+        <p>
+            You can remove elements from a list by their value using the remove() method, or by their index using the
+            del statement or the pop() method.
+        </p>
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_7">
+fruits = ["apple", "banana", "orange"]
+fruits.remove("banana")
+print(fruits)  # Output: ["apple", "orange"]
+
+del fruits[0]
+print(fruits)  # Output: ["orange"]
+
+popped_fruit = fruits.pop()
+print(popped_fruit)  # Output: "orange"
+print(fruits)        # Output: []
+        </pre>
+        <div id="runner7" class="runner" style="display: none;">
+            <pre id="output7" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="7">Run Code</button>
+    </div>
+    <div class="note-cont">
+        <span class="topic">List Operations</span>
+        <p>Python provides several built-in operations and functions for working with lists</p>
+        <span>Concatenation</span>
+        <p>You can concatenate two lists using the '+' operator.</p>
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_8">
+list1 = [1, 2, 3]
+list2 = [4, 5, 6]
+concatenated_list = list1 + list2
+print(concatenated_list)  # Output: [1, 2, 3, 4, 5, 6]
+        </pre>
+        <div id="runner8" class="runner" style="display: none;">
+            <pre id="output8" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="8">Run Code</button>
+    </div>
+    <div class="note-cont">
+        <span class="topic">
+            Repetition
+        </span>
+        <p>You can repeat a list by using the * operator.</p>
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_9">
+list1 = [1, 2, 3]
+repeated_list = list1 * 3
+print(repeated_list)  # Output: [1, 2, 3, 1, 2, 3, 1, 2, 3]
+        </pre>
+        <div id="runner9" class="runner" style="display: none;">
+            <pre id="output9" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="9">Run Code</button>
+    </div>
+    <div class="note-cont">
+        <span class="topic">
+            Length
+        </span>
+        <p>You can get the length of a list (the number of elements it contains) using the <code>len()</code> function.
+        </p>
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_10">
+numbers = [1, 2, 3, 4, 5]
+print(len(numbers))  # Output: 5
+        </pre>
+        <div id="runner10" class="runner" style="display: none;">
+            <pre id="output10" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="10">Run Code</button>
+    </div>
+    <div class="note-cont">
+        <span class="topic">
+            Membership
+        </span>
+        <p>You can check if an element is present in a list using the in keyword.</p>
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_11">
+fruits = ["apple", "banana", "orange"]
+print("banana" in fruits)  # Output: True
+print("grape" in fruits)   # Output: False
+        </pre>
+        <div id="runner11" class="runner" style="display: none;">
+            <pre id="output11" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="11">Run Code</button>
+    </div>
+    <div class="note-cont">
+        <span class="topic">Conclusion</span>
+        <p>Lists are versatile data structures in Python that allow you to store and manipulate collections of items
+            efficiently. In this tutorial, we covered the basics of creating lists, accessing elements, modifying lists,
+            and common list operations. With this knowledge, you should be well-equipped to start using lists in your
+            Python programs. Practice and experimentation are key to mastering lists and Python programming in general.
+        </p>
+    </div>
+    <div class="next-prev">
+        <a href="/lessons/lesson-0" class="next-prev-a">Previous Lesson</a>
+        <div class="form-next">
+            <form action='/progress' method='POST' id="progressForm">
+                <!-- Include the CSRF token -->
+                <input type='hidden' name='csrf_token' value='{{.CSRFToken}}'>
+                <input type="hidden" name="lName" value="1">
+                <input type="hidden" name="pName" value="1">
+                <input type="hidden" name="next" value="/lessons/lesson-2">
+                <button class="next-prev-btn">Next Lesson</button>
+            </form>
+        </div>
+    </div>
+</div>
+{{end}}

@@ -1,0 +1,242 @@
+{{define "title"}}lesson-4{{end}}
+
+{{define "jss"}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"
+    charset="utf-8"></script>
+<script src="/static/js/lesson.js" type="text/javascript" charset="utf-8"></script>
+<script src="/static/js/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="/static/js/skulpt/skulpt.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/static/js/skulpt/skulpt-stdlib.js" type="text/javascript" charset="utf-8"></script>
+{{end}}
+
+{{define "css"}}
+<link rel="stylesheet" href="/static/css/lesson.css" />{{end}}
+{{define "main"}}
+<div class="hero" style="background-color: #164915;">
+    <span>Functions</span>
+</div>
+<div class="objectives">
+    <div class="card">
+        <span class="heading">What you will learn in this lesson...</span>
+        <ul>
+            <li>Basics of functions</li>
+            <li>Working with functions</li>
+        </ul>
+    </div>
+</div>
+
+<div class="content">
+    <div class="note-cont">
+        <span class="topic">Functions...</span>
+        <p>
+            Functions are an essential part of programming in Python. They allow you to encapsulate reusable pieces of
+            code, making your programs more modular, readable, and maintainable. In this tutorial, we'll cover the
+            basics of Python functions, including how to define them, call them, pass arguments to them, and return
+            values from them.
+        </p>
+        <span class="topic">What is a Function?</span>
+        <p>
+            In Python, a function is a block of code that performs a specific task or computation. Functions can take
+            input arguments, perform operations on them, and optionally return a result. They help in organizing code
+            into logical units, making it easier to understand and manage.
+        </p>
+        <span class="topic">Defining Functions</span>
+        <p>
+            You can define a function in Python using the def keyword followed by the function name and a pair of
+            parentheses (). Optionally, you can specify input parameters inside the parentheses. The body of the
+            function is defined using an indented block of code.
+        </p>
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_1">
+def greet():
+    print("Hello, world!")
+        </pre>
+        <div id="runner1" class="runner" style="display: none;">
+            <pre id="output1" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="1">Run Code</button>
+    </div>
+
+    <div class="note-cont">
+        <p>In this example, we've defined a simple function named greet that prints "Hello, world!" when called.</p>
+    </div>
+
+    <div class="note-cont">
+        <span class="topic">Calling Functions</span>
+        <p>To call or invoke a function in Python, you simply use its name followed by a pair of parentheses (). If the
+            function takes input arguments, you pass them inside the parentheses.</p>
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_2">
+def greet():
+    print("Hello, world!")
+
+greet()    
+        </pre>
+        <div id="runner2" class="runner" style="display: none;">
+            <pre id="output2" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="2">Run Code</button>
+    </div>
+
+    <div class="note-cont">
+        <span class="topic">Function Parameters</span>
+        <p>Functions can accept input parameters, allowing you to pass data to them when they are called. You specify
+            the parameters inside the parentheses when defining the function, and you can use these parameters within
+            the function's body.</p>
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_3">
+def greet(name):
+    print("Hello, " + name + "!")
+
+greet("Alice")  # Output: Hello, Alice!
+greet("Bob")    # Output: Hello, Bob!
+        </pre>
+        <div id="runner3" class="runner" style="display: none;">
+            <pre id="output3" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="3">Run Code</button>
+    </div>
+
+    <div class="note-cont">
+        <p>In this example, the greet function takes a single parameter name, which is used to personalize the greeting
+            message.</p>
+
+        <span class="topic">Return Values</span>
+        <p>Functions in Python can optionally return a value using the return statement. This allows the function to
+            compute a result and pass it back to the caller for further processing.</p>
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_4">
+def add(x, y):
+    return x + y
+
+result = add(3, 5)
+print(result)  # Output: 8
+        </pre>
+        <div id="runner4" class="runner" style="display: none;">
+            <pre id="output4" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="4">Run Code</button>
+    </div>
+
+    <div class="note-cont">
+        <p>In this example, the add function takes two parameters x and y, adds them together, and returns the result.
+        </p>
+        <span class="topic">Default Parameters
+        </span>
+        <p>You can specify default values for function parameters, allowing the function to be called with fewer
+            arguments. If a value is not provided for a parameter when the function is called, the default value is used
+            instead.
+        </p>
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_5">
+def greet(name="world"):
+    print("Hello, " + name + "!")
+
+greet()       # Output: Hello, world!
+greet("Alice")  # Output: Hello, Alice!
+        </pre>
+        <div id="runner5" class="runner" style="display: none;">
+            <pre id="output5" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="5">Run Code</button>
+    </div>
+
+    <div class="note-cont">
+        <span class="topic">Keyword Arguments</span>
+        <p>
+            When calling a function, you can specify arguments by their parameter names, allowing you to pass them in
+            any order. These are called keyword arguments.
+        </p>
+    </div>
+
+    <div class="editor-runner">
+        <pre class="editor" id="editor_6">
+def greet(first_name, last_name):
+    print("Hello, " + first_name + " " + last_name + "!")
+
+greet(last_name="Smith", first_name="John")  # Output: Hello, John Smith!
+        </pre>
+        <div id="runner6" class="runner" style="display: none;">
+            <pre id="output6" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="6">Run Code</button>
+    </div>
+
+    <div class="note-cont">
+        <span class="topic">Variable Number of Arguments</span>
+        <p>Python functions can accept a variable number of arguments using the *args and **kwargs syntax. This allows
+            you to pass any number of positional or keyword arguments to the function.
+        </p>
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_7">
+def add(*args):
+    total = 0
+    for num in args:
+        total += num
+    return total
+
+print(add(1, 2, 3))  # Output: 6
+print(add(1, 2, 3, 4, 5))  # Output: 15
+        </pre>
+        <div id="runner7" class="runner" style="display: none;">
+            <pre id="output7" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="7">Run Code</button>
+    </div>
+
+    <div class="note-cont">
+        <span class="topic">Scope of Variables</span>
+        <p>
+            Variables defined inside a function are scoped to that function and cannot be accessed from outside.
+            Similarly, variables defined outside a function (global variables) can be accessed from within the function,
+            but modifying them inside the function requires using the global keyword.
+        </p>
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_8">
+x = 10  # Global variable
+
+def func():
+    y = 20  # Local variable
+    global x
+    x += 1
+    print("Inside function:", x, y)
+
+func()
+print("Outside function:", x)  # Output: 11
+        </pre>
+        <div id="runner8" class="runner" style="display: none;">
+            <pre id="output8" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="8">Run Code</button>
+    </div>
+    <div class="note-cont">
+        <span class="topic">Conclusion</span>
+        <p>Functions are fundamental building blocks in Python programming. They allow you to encapsulate reusable code,
+            making your programs more modular and easier to understand. In this tutorial, we covered the basics of
+            defining functions, calling them, passing arguments, returning values, and various other features of Python
+            functions. With practice and experimentation, you'll become proficient in using functions to write clean and
+            efficient Python code.
+        </p>
+    </div>
+    <div class="next-prev">
+        <a href="/lessons/lesson-3" class="next-prev-a">Previous Lesson</a>
+        <div class="form-next">
+            <form action='/progress' method='POST' id="progressForm">
+                <!-- Include the CSRF token -->
+                <input type='hidden' name='csrf_token' value='{{.CSRFToken}}'>
+                <input type="hidden" name="lName" value="4">
+                <input type="hidden" name="pName" value="4">
+                <input type="hidden" name="next" value="/lessons/lesson-5">
+                <button class="next-prev-btn">Next Lesson</button>
+            </form>
+        </div>
+    </div>
+</div>
+{{end}}

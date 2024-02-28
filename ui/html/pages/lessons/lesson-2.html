@@ -1,0 +1,251 @@
+{{define "title"}}lesson-2{{end}}
+
+{{define "jss"}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"
+    charset="utf-8"></script>
+<script src="/static/js/lesson.js" type="text/javascript" charset="utf-8"></script>
+<script src="/static/js/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="/static/js/skulpt/skulpt.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/static/js/skulpt/skulpt-stdlib.js" type="text/javascript" charset="utf-8"></script>
+{{end}}
+
+{{define "css"}}
+<link rel="stylesheet" href="/static/css/lesson.css" />{{end}}
+{{define "main"}}
+<div class="hero" style="background-color: #911294;">
+    <span>Conditionals</span>
+</div>
+<div class="objectives">
+    <div class="card">
+        <span class="heading">What you will learn in this lesson...</span>
+        <ul>
+            <li>Basics of Conditional statement</li>
+            <li>Indentation and Blocks</li>
+        </ul>
+    </div>
+</div>
+
+<div class="content">
+    <div class="note-cont">
+        <span class="topic">Conditionals...</span>
+        <p>
+            Conditional statements in Python allow you to control the flow of your program based on certain conditions.
+            They enable you to execute specific blocks of code only if certain conditions are met. In this tutorial,
+            we'll cover the basics of Python conditional statements, including the if, elif, and else statements. We'll
+            also discuss the importance of statement blocks, indentation, and scope in Python.
+        </p>
+        <span class="topic">What are Conditional Statements?</span>
+        <p>
+            Conditional statements in programming are used to execute different pieces of code based on certain
+            conditions. They allow your program to make decisions and respond accordingly to different situations. In
+            Python, conditional statements are implemented using keywords such as if, elif (short for "else if"), and
+            else.
+        </p>
+        <span class="topic"><code>if</code> Statement</span>
+        <p>
+            The if statement is used to execute a block of code only if a specified condition is True. It follows this
+            basic syntax:
+        </p>
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_1">
+if condition:
+    # Code block to execute if condition is True
+        </pre>
+        <div id="runner1" class="runner" style="display: none;">
+            <pre id="output1" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="1">Run Code</button>
+    </div>
+
+    <div class="note-cont">
+        <p>
+            The condition is an expression that evaluates to either True or False. If the condition is True, the code
+            block following the if statement is executed. If the condition is False, the code block is skipped.
+        </p>
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_2">
+x = 10
+
+if x > 5:
+    print("x is greater than 5")
+        </pre>
+        <div id="runner2" class="runner" style="display: none;">
+            <pre id="output2" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="2">Run Code</button>
+    </div>
+
+    <div class="note-cont">
+        <p>In this example, since x is indeed greater than 5, the code block inside the if statement is executed, and
+            the output will be: <code>x is greater than 5</code></p>
+    </div>
+    <div class="note-cont">
+        <span class="topic">
+            Statement Blocks, Indentation, and Scope
+        </span>
+        <p>In Python, statement blocks are defined by indentation. All statements within the same block must have the
+            same indentation level. Indentation is crucial for Python's syntax and determines the scope of statements.
+            The code inside the if block is executed only if the condition is True. The indentation (typically four
+            spaces) tells Python where the block of code associated with the if statement begins and ends.</p>
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_3">
+if condition:
+    # This statement is part of the if block
+    # It will be executed if the condition is True
+    print("Inside the if block")
+
+# This statement is not part of the if block
+# It will be executed regardless of the condition
+print("Outside the if block")
+        </pre>
+        <div id="runner3" class="runner" style="display: none;">
+            <pre id="output3" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="3">Run Code</button>
+    </div>
+    <div class="note-cont">
+        <span class="topic">if...else Statement</span>
+        <p>The if...else statement allows you to execute one block of code if a condition is True, and another block of
+            code if the condition is False. It follows this syntax:</p>
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_4">
+if condition:
+    # Code block to execute if condition is True
+else:
+    # Code block to execute if condition is False
+        </pre>
+        <div id="runner4" class="runner" style="display: none;">
+            <pre id="output4" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="4">Run Code</button>
+    </div>
+
+    <div class="note-cont">
+        <p>If the condition in the if statement is True, the code block following the if statement is executed. If the
+            condition is False, the code block following the else statement is executed.</p>
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_5">
+x = 3
+
+if x > 5:
+    print("x is greater than 5")
+else:
+    print("x is not greater than 5")
+        </pre>
+        <div id="runner5" class="runner" style="display: none;">
+            <pre id="output5" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="5">Run Code</button>
+    </div>
+
+    <div class="note-cont">
+        <p>
+            In this example, since x is not greater than 5, the code block inside the else statement is executed, and
+            the output will be: <code>x in not greater than 5   </code>
+        </p>
+        <span class="topic">if...elif...else Statement</span>
+        <p>The if...elif...else statement allows you to check multiple conditions and execute different blocks of code
+            based on the outcome of these conditions. It follows this syntax:</p>
+    </div>
+
+    <div class="editor-runner">
+        <pre class="editor" id="editor_6">
+if condition1:
+    # Code block to execute if condition1 is True
+elif condition2:
+    # Code block to execute if condition2 is True
+else:
+    # Code block to execute if all conditions are False
+        </pre>
+        <div id="runner6" class="runner" style="display: none;">
+            <pre id="output6" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="6">Run Code</button>
+    </div>
+    <div class="note-cont">
+        <p>This statement provides an alternative to using multiple if statements one after the other. Python evaluates
+            each condition in sequence until one is found to be True. If none of the conditions are True, the code block
+            associated with the else statement is executed.</p>
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_7">
+x = 3
+
+if x > 5:
+    print("x is greater than 5")
+elif x == 5:
+    print("x is equal to 5")
+else:
+    print("x is less than 5")
+        </pre>
+        <div id="runner7" class="runner" style="display: none;">
+            <pre id="output7" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="7">Run Code</button>
+    </div>
+
+    <div class="note-cont">
+        <p>
+            In this example, since x is less than 5, the code block inside the else statement is executed, and the
+            output will be: <code>x is less than 5</code>
+        </p>
+    </div>
+    <div class="note-cont">
+        <span class="topic">
+            Nested Conditionals
+        </span>
+        <p>Nested conditionals occur when you have one conditional statement inside another. This allows for more
+            complex logic by checking multiple conditions in a hierarchical manner.</p>
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_8">
+x = 10
+y = 20
+
+if x > 5:
+    if y > 10:
+        print("x is greater than 5 and y is greater than 10")
+    else:
+        print("x is greater than 5 but y is not greater than 10")
+else:
+    print("x is not greater than 5")
+        </pre>
+        <div id="runner8" class="runner" style="display: none;">
+            <pre id="output8" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="8">Run Code</button>
+    </div>
+    <div class="note-cont">
+        <p>In this nested example, if x is greater than 5 and y is greater than 10, the first print statement will be
+            executed. Otherwise, the second print statement will be executed.
+        </p>
+    </div>
+    <div class="note-cont">
+        <span class="topic">Conclusion</span>
+        <p>Understanding conditional statements is crucial for writing effective Python programs. They allow your code
+            to make decisions and respond to different situations dynamically. Remember to pay attention to statement
+            blocks, indentation, and scope in Python, as they define the structure and behavior of your code. With
+            practice, you'll become comfortable using conditional statements to create more complex and responsive
+            programs.
+        </p>
+    </div>
+    <div class="next-prev">
+        <a href="/lessons/lesson-1" class="next-prev-a">Previous Lesson</a>
+        <div class="form-next">
+            <form action='/progress' method='POST' id="progressForm">
+                <!-- Include the CSRF token -->
+                <input type='hidden' name='csrf_token' value='{{.CSRFToken}}'>
+                <input type="hidden" name="lName" value="2">
+                <input type="hidden" name="pName" value="2">
+                <input type="hidden" name="next" value="/lessons/lesson-3">
+                <button class="next-prev-btn">Next Lesson</button>
+            </form>
+        </div>
+    </div>
+</div>
+{{end}}

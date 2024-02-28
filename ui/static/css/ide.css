@@ -1,0 +1,23 @@
+.ide {
+    display: flex;
+    height: 85vh;
+    width: 100vw;
+}
+
+#editor,
+.runner {
+    height: 100%;
+    width: 50%;
+}
+
+.run-btn {
+    margin-block: 5px;
+}
+
+.runner {
+    background-color: #272822;
+    border-left: 3px solid #fff;
+    padding: 10px;
+    font-family: "JetBrains Mono", monospace;
+    color: #fff;
+}

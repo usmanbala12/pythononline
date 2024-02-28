@@ -1,0 +1,43 @@
+{{define "title"}}IDE{{end}}
+
+{{define "css"}}
+<link rel="stylesheet" href="/static/css/ide.css" />{{end}}
+
+{{define "jss"}}
+<script src="/static/js/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="/static/js/ide.js" type="text/javascript" charset="utf-8"></script>
+<script src="/static/js/skulpt/skulpt.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/static/js/skulpt/skulpt-stdlib.js" type="text/javascript" charset="utf-8"></script>
+{{end}}
+
+{{define "main"}}
+<button onclick="runit()" class="run-btn">Run program</button>
+<div class="ide">
+    <pre id="editor" style="font-size: 14px;">
+# Function to demonstrate printing pattern
+def pypart(n):
+        
+    # outer loop to handle number of rows
+    # n in this case
+    for i in range(0, n):
+        
+        # inner loop to handle number of columns
+        # values changing acc. to outer loop
+        for j in range(0, i+1):
+            
+            # printing stars
+            print("* ",end="")
+        
+        # ending line after each row
+        print("\r")
+    
+# Driver Code
+n = 5
+pypart(n)
+    </pre>
+    <div class="runner">
+        <p style="font-size: 14px;">user@python-online:~$</p>
+        <pre id="output" style="font-size: 14px;"></pre>
+    </div>
+</div>
+{{end}}

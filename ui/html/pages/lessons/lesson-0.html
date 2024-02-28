@@ -1,0 +1,156 @@
+{{define "title"}}lesson-0{{end}}
+
+{{define "jss"}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"
+    charset="utf-8"></script>
+<script src="/static/js/lesson.js" type="text/javascript" charset="utf-8"></script>
+<script src="/static/js/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="/static/js/skulpt/skulpt.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/static/js/skulpt/skulpt-stdlib.js" type="text/javascript" charset="utf-8"></script>
+{{end}}
+
+{{define "css"}}
+<link rel="stylesheet" href="/static/css/lesson.css" />{{end}}
+{{define "main"}}
+<div class="hero">
+    <span>Variables and simple data types</span>
+</div>
+<div class="objectives">
+    <div class="card">
+        <span class="heading">What you will learn in this lesson...</span>
+        <ul>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, ratione.</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="content">
+    <div class="note-cont">
+        <span class="topic">Hello World!</span>
+        <p>
+            The traditional "Hello, world" program is very simple in Python.You can run the program by clicking on the
+            run code button. Try editing the string in the quotes and rerunning the program.
+        </p>
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_1">print("Hello world")</pre>
+        <div id="runner1" class="runner" style="display: none;">
+            <pre id="output1" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="1">Run Code</button>
+    </div>
+    <div class="note-cont">
+        <p>
+            You can print multiple strings.
+        </p>
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_2">print("Hello", "my" "is", "usman")</pre>
+        <div id="runner2" class="runner" style="display: none;">
+            <pre id="output2" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="2">Run Code</button>
+    </div>
+    <div class="note-cont">
+        <span class="topic">Variables</span>
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_3">
+message = "Hello world!"
+print(message)
+        </pre>
+        <div id="runner3" class="runner" style="display: none;">
+            <pre id="output3" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="3">Run Code</button>
+    </div>
+    <div class="note-cont">
+        <p>Run the above program to see what happens. You should see the same output you saw previously:
+            <code>Hello world</code>.
+        </p>
+        <p>We’ve added a variable named message. Every variable is connected to a
+            value, which is the information associated with that variable. In this case
+            the value is the <code>"Hello Python world!"</code> text.
+            You can change the value of a variable in your program at any time,
+            and Python will always keep track of its current value. Modify the variable and re-run the program to see
+            what happens.
+        </p>
+        <span class="variable Naming guidelines"></span>
+        <p>
+            When you’re using variables in Python, you need to adhere to a few rules
+            and guidelines. Breaking some of these rules will cause errors; other guide-
+            lines just help you write code that’s easier to read and understand. Be sure
+            to keep the following rules in mind when working with variables:
+        </p>
+        <ul>
+            <li>Variable names can contain only letters, numbers, and underscores.
+                They can start with a letter or an underscore, but not with a number.
+                For instance, you can call a variable message_1 but not 1_message.
+            </li>
+            <li>
+                Spaces are not allowed in variable names, but underscores can be used
+                to separate words in variable names. For example, greeting_message works
+                but greeting message will cause errors.
+            </li>
+            <li>
+                Avoid using Python keywords and function names as variable names.
+                For example, do not use the word print as a variable name; Python
+                has reserved it for a particular programmatic purpose
+            </li>
+            <li>
+                Variable names should be short but descriptive. For example, name is
+                better than n, student_name is better than s_n, and name_length is better
+                than length_of_persons_name.
+            </li>
+        </ul>
+    </div>
+    <div class="note-cont">
+        <span class="topic">Your first error</span>
+        <p>Run the program below and observer the output</p>
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_4">
+message = "Hello world"
+print(mesage)
+</pre>
+        <div id="runner4" class="runner" style="display: none;">
+            <pre id="output4" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="4">Run Code</button>
+    </div>
+    <div class="note-cont">
+        <p>The interpreter reports a <code>NameError: 'mesage' not defined on line 2 </code></p>
+        <p>When an error occurs in your program, the Python interpreter does its
+            best to help you figure out where the problem is. The interpreter provides
+            a traceback when a program cannot run successfully. A traceback is a record
+            of where the interpreter ran into trouble when trying to execute your code. In this case, on line 2.
+            looking at our program carefully, you will discover that mesage is missing an 'S'. Fix the problem and run
+            the program again.
+        </p>
+    </div>
+    <div class="note-cont">
+        <span class="topic">More on variables...</span>
+        <p>
+            Variables are often described as boxes you can store values in. This idea can
+            be helpful the first few times you use a variable, but it isn’t an accurate way
+            to describe how variables are represented internally in Python. It’s much
+            better to think of variables as labels that you can assign to values. You can
+            also say that a variable references a certain value.
+        </p>
+    </div>
+    <div class="next-prev">
+        <div class="form-next" style="width: 100%; display: flex; justify-content: flex-end;">
+            <form action='/progress' method='POST' id="progressForm">
+                <!-- Include the CSRF token -->
+                <input type='hidden' name='csrf_token' value='{{.CSRFToken}}'>
+                <input type="hidden" name="lName" value="0">
+                <input type="hidden" name="pName" value="0">
+                <input type="hidden" name="next" value="/lessons/lesson-1">
+                <button class="next-prev-btn">Next Lesson</button>
+            </form>
+        </div>
+    </div>
+</div>
+{{end}}

@@ -1,0 +1,251 @@
+{{define "title"}}lesson-3{{end}}
+
+{{define "jss"}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"
+    charset="utf-8"></script>
+<script src="/static/js/lesson.js" type="text/javascript" charset="utf-8"></script>
+<script src="/static/js/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="/static/js/skulpt/skulpt.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/static/js/skulpt/skulpt-stdlib.js" type="text/javascript" charset="utf-8"></script>
+{{end}}
+
+{{define "css"}}
+<link rel="stylesheet" href="/static/css/lesson.css" />{{end}}
+{{define "main"}}
+<div class="hero" style="background-color: #208B85;">
+    <span>Dictionaries</span>
+</div>
+<div class="objectives">
+    <div class="card">
+        <span class="heading">What you will learn in this lesson...</span>
+        <ul>
+            <li>basics of Python dictionaries</li>
+            <li>how to create them, access elements, modify them, and perform common operations</li>
+        </ul>
+    </div>
+</div>
+
+<div class="content">
+    <div class="note-cont">
+        <span class="topic">Dictionaries...</span>
+        <p>
+            Dictionaries are one of the most powerful and versatile data structures in Python. They allow you to store
+            collections of data in key-value pairs, providing a flexible way to organize and manipulate data. In this
+            tutorial, we'll cover the basics of Python dictionaries, including how to create them, access elements,
+            modify them, and perform common operations.
+        </p>
+        <span class="topic">What is a Dictionary?</span>
+        <p>
+            A dictionary in Python is an unordered collection of data in key-value pairs. Each key is unique within the
+            dictionary and maps to a corresponding value. Dictionaries are mutable, meaning they can be modified after
+            creation. They are often used to represent real-world entities and relationships in a program.
+        </p>
+        <span class="topic">Creating Dictionaries</span>
+        <p>
+            You can create a dictionary in Python by enclosing a comma-separated list of key-value pairs within curly
+            braces {}. Each key-value pair is separated by a colon :. Here's how you can create a simple dictionary:
+        </p>
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_1">
+# Creating a dictionary of student names and their ages
+student_ages = {"Usman": 20, "Abdullahi": 21, "Hamza": 19}
+        </pre>
+        <div id="runner1" class="runner" style="display: none;">
+            <pre id="output1" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="1">Run Code</button>
+    </div>
+
+    <div class="note-cont">
+        <p>You can also create an empty dictionary and add key-value pairs dynamically:</p>
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_2">
+# Creating an empty dictionary
+empty_dict = {}
+
+# Adding key-value pairs dynamically
+empty_dict["key1"] = "value1"
+empty_dict["key2"] = "value2"
+        </pre>
+        <div id="runner2" class="runner" style="display: none;">
+            <pre id="output2" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="2">Run Code</button>
+    </div>
+
+    <div class="note-cont">
+        <span class="topic">Accessing Elements</span>
+        <p>You can access the value associated with a specific key in a dictionary by using square brackets [] and
+            specifying the key. If the key exists in the dictionary, the corresponding value is returned. If the key is
+            not found, Python will raise a KeyError.</p>
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_3">
+student_ages = {"Usman": 20, "Abdullahi": 21, "Hamza": 19}
+
+# Accessing values in the student_ages dictionary
+print(student_ages["Usman"])  # Output: 20
+print(student_ages["Hamza"])    # Output: 21
+        </pre>
+        <div id="runner3" class="runner" style="display: none;">
+            <pre id="output3" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="3">Run Code</button>
+    </div>
+    <div class="note-cont">
+        <span class="topic">if...else Statement</span>
+        <p>To avoid KeyError, you can use the <code>get()</code> method, which allows you to specify a default value to
+            return if the
+            key is not found:</p>
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_4">
+student_ages = {"Usman": 20, "Abdullahi": 21, "Hamza": 19}
+# Using get() method to access values with a default value
+print(student_ages.get("Hamza", "Key not found"))  # Output: 19
+print(student_ages.get("Sale", "Key not found"))    # Output: "Key not found"
+        </pre>
+        <div id="runner4" class="runner" style="display: none;">
+            <pre id="output4" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="4">Run Code</button>
+    </div>
+
+    <div class="note-cont">
+        <span class="topic">Modifying Dictionaries</span>
+        <p>Dictionaries in Python are mutable, meaning you can modify their contents after they are created. You can add
+            new key-value pairs, update existing values, or remove key-value pairs from the dictionary.</p>
+        <span class="topic">Adding and Updating Elements</span>
+        <p>You can add new key-value pairs to a dictionary or update the value of an existing key by simply assigning a
+            value to the key.
+        </p>
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_5">
+student_ages = {"Usman": 20, "Abdullahi": 21, "Hamza": 19}
+
+# Adding a new key-value pair
+student_ages["Sale"] = 22
+
+# Updating the value of an existing key
+student_ages["Usman"] = 21
+        </pre>
+        <div id="runner5" class="runner" style="display: none;">
+            <pre id="output5" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="5">Run Code</button>
+    </div>
+
+    <div class="note-cont">
+        <span class="topic">Removing Elements</span>
+        <p>
+            You can remove key-value pairs from a dictionary using the <code>del</code> keyword or the
+            <code>pop()</code> method.
+        </p>
+    </div>
+
+    <div class="editor-runner">
+        <pre class="editor" id="editor_6">
+student_ages = {"Usman": 20, "Abdullahi": 21, "Hamza": 19}
+
+# Removing a key-value pair using del
+del student_ages["Hamza"]
+
+# Removing a key-value pair using pop()
+removed_value = student_ages.pop("Abdullahi")
+        </pre>
+        <div id="runner6" class="runner" style="display: none;">
+            <pre id="output6" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="6">Run Code</button>
+    </div>
+
+    <div class="note-cont">
+        <span class="topic">Dictionary Operations</span>
+        <p>Python provides several built-in operations and methods for working with dictionaries.
+        </p>
+        <span class="topic">Length</span>
+        <p>You can get the number of key-value pairs in a dictionary using the <code>len()</code> function.</p>
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_7">
+student_ages = {"Usman": 20, "Abdullahi": 21, "Hamza": 19}
+print(len(student_ages))
+        </pre>
+        <div id="runner7" class="runner" style="display: none;">
+            <pre id="output7" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="7">Run Code</button>
+    </div>
+
+    <div class="note-cont">
+        <span class="topic">Membership</span>
+        <p>
+            You can check if a key exists in a dictionary using the <code>in</code> keyword.
+        </p>
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_8">
+student_ages = {"Usman": 20, "Abdullahi": 21, "Hamza": 19}
+print("Asma'u" in student_ages)  # Output: True
+print("Usman" in student_ages)    # Output: False
+        </pre>
+        <div id="runner8" class="runner" style="display: none;">
+            <pre id="output8" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="8">Run Code</button>
+    </div>
+
+    <div class="note-cont">
+        <span class="topic">
+            Iteration
+        </span>
+        <p>You can iterate over the keys, values, or key-value pairs of a dictionary using loops.</p>
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_9">
+student_ages = {"Usman": 20, "Abdullahi": 21, "Hamza": 19}
+
+# Iterating over keys
+for key in student_ages:
+    print(key)
+
+# Iterating over values
+for value in student_ages.values():
+    print(value)
+
+# Iterating over key-value pairs
+for key, value in student_ages.items():
+    print(key, value)
+        </pre>
+        <div id="runner9" class="runner" style="display: none;">
+            <pre id="output9" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="9">Run Code</button>
+    </div>
+    <div class="note-cont">
+        <span class="topic">Conclusion</span>
+        <p>Dictionaries are powerful data structures in Python that allow you to store and manipulate data in key-value
+            pairs. In this tutorial, we covered the basics of creating dictionaries, accessing elements, modifying
+            dictionaries, and performing common operations. With this knowledge, you should be well-equipped to start
+            using dictionaries in your Python programs. Practice and experimentation are key to mastering dictionaries
+            and Python programming in general.
+        </p>
+    </div>
+    <div class="next-prev">
+        <a href="/lessons/lesson-2" class="next-prev-a">Previous Lesson</a>
+        <div class="form-next">
+            <form action='/progress' method='POST' id="progressForm">
+                <!-- Include the CSRF token -->
+                <input type='hidden' name='csrf_token' value='{{.CSRFToken}}'>
+                <input type="hidden" name="lName" value="3">
+                <input type="hidden" name="pName" value="3">
+                <input type="hidden" name="next" value="/lessons/lesson-4">
+                <button class="next-prev-btn">Next Lesson</button>
+            </form>
+        </div>
+    </div>
+</div>
+{{end}}

@@ -1,0 +1,31 @@
+{{define "base"}}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>{{template "title" .}} - pythonOnline</title>
+  <link rel="stylesheet" href="/static/css/main.css" />
+  <link rel="shortcut icon" href="/static/img/PO.png" type="image/x-icon" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"
+    charset="utf-8"></script>
+  {{block "css" .}}{{end}}
+  {{block "jss" .}}{{end}}
+</head>
+
+<body>
+  {{template "nav" .}}
+  <main>
+    {{with .Flash}}
+    <div class='flash'>{{.}}</div>
+    {{end}}
+    {{template "main" .}}
+  </main>
+  {{if and (not (or (eq .Url "/ide") (eq .Url "/user/login") (eq .Url "/user/signup") (eq .Url "/progress")))}}
+  {{template "footer" .}}
+  {{end}}
+  <script src="/static/js/main.js" type="text/javascript"></script>
+</body>
+
+</html>
+{{end}}

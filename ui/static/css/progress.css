@@ -1,0 +1,21 @@
+#map-container {
+    margin-top: 20px;
+    width: 100vw;
+    height: 80vh;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    align-items: stretch;
+    column-gap: 30px;
+    padding-inline: 30px;
+}
+
+/* Define styles for each clickable area, including margin for spacing */
+.map-area {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+}
+
+.map-area:hover {
+    background-color: lightblue;
+}

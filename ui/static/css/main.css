@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*
+    2. Remove default margin
+  */
+* {
+    margin: 0;
+}
+
+/*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/*
+    5. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/*
+    6. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/*
+    7. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/*
+    8. Create a root stacking context
+  */
+#root,
+#__next {
+    isolation: isolate;
+}
+
+/* ::backdrop {
+    background-image: linear-gradient(45deg,
+            magenta,
+            rebeccapurple,
+            dodgerblue,
+            green);
+    opacity: 0.75;
+} */
+
+/* dialog {
+    font-family: "JetBrains Mono", monospace;
+    margin: auto;
+    height: 90vh;
+    width: 80vw;
+    border: none;
+    border-radius: 15px;
+} */
+/* 
+#closeAuth {
+    position: absolute;
+    right: -1%;
+    background-color: transparent;
+    border: none;
+} */
+
+
+.success-msg,
+.flash,
+.error-msg {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 3px 3px 3px 3px;
+    font-family: "JetBrains Mono", monospace;
+    text-align: center;
+}
+
+.success-msg,
+.flash {
+    color: rgb(36, 126, 0);
+    background-color: #DFF2BF;
+}
+
+.error-msg {
+    color: #D8000C;
+    background-color: #FFBABA;
+}
+
+.input-error {
+    color: #D8000C;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 30px;
+    padding-block: 10px;
+}
+
+.nav-links {
+    height: fit-content;
+    display: flex;
+}
+
+nav a,
+nav>button,
+.btn-logout {
+    font-family: "JetBrains Mono", monospace;
+    text-decoration: none;
+    display: block;
+    height: fit-content;
+    color: #010D07;
+    font-size: 25px;
+    margin-inline-end: 20px;
+}
+
+nav>button,
+.btn-logout {
+    border: none;
+    background-color: transparent;
+}
+
+
+nav a:hover,
+button:hover {
+    color: #0B733F;
+    cursor: pointer;
+}
+
+footer {
+    font-family: "Inter", sans-serif;
+    margin-top: 100px;
+    padding-block: 20px;
+    background-color: #010D07;
+    height: 250px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-inline: 30px;
+}
+
+
+footer .text span {
+    font-size: 1.5rem;
+    font-weight: 500;
+}

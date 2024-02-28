@@ -1,0 +1,131 @@
+main {
+    max-width: 85%;
+    margin: auto;
+    font-family: "Inter", sans-serif;
+}
+
+.hero {
+    display: flex;
+}
+
+.text-cta {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    max-width: 50%;
+}
+
+.text-cta span {
+    display: block;
+}
+
+.text-cta .title {
+    font-size: 33px;
+    font-family: "Inter", sans-serif;
+}
+
+.text-cta .sub-title {
+    font-size: 20px;
+    font-family: "Inter", sans-serif;
+}
+
+.cta-button {
+    color: #0B733F;
+    border-bottom: 2px solid #0B733F;
+    font-size: 28px;
+    max-width: fit-content;
+    text-transform: uppercase;
+    font-family: "Inter", sans-serif;
+}
+
+.cta-button:hover {
+    color: #103a25;
+    border-bottom: none;
+    cursor: pointer;
+}
+
+.promises {
+    margin-block: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.promises .title,
+.lesson-list .title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.promises .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    place-content: center;
+    margin-block: 30px;
+}
+
+.promises .card {
+    background-color: #deffe3;
+    padding: 15px;
+    max-width: 88%;
+}
+
+.lesson-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.lesson-cards {
+    margin-top: 30px;
+}
+
+.lesson-card {
+    display: flex;
+    width: 100%;
+    padding: 15px 30px;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    margin-block-end: 40px;
+}
+
+.lesson-card:nth-child(1) {
+    background-color: #276e4b;
+}
+
+.lesson-card:nth-child(2) {
+    background-color: #7A7A89;
+}
+
+.lesson-card:nth-child(3) {
+    background-color: #722b74;
+}
+
+.lesson-card:nth-child(4) {
+    background-color: #7c522f;
+}
+
+.lesson-card:nth-child(5) {
+    background-color: #164C58;
+}
+
+.lesson-card:nth-child(6) {
+    background-color: #208B85;
+}
+
+.lesson-card .text {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.lesson-card .lesson-no {
+    font-weight: 500;
+    font-size: 1.8rem;
+}
+
+.lesson-card .lesson-title {
+    font-size: 1.3rem;
+}

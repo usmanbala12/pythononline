@@ -1,0 +1,262 @@
+{{define "title"}}lesson-5{{end}}
+
+{{define "jss"}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"
+    charset="utf-8"></script>
+<script src="/static/js/lesson.js" type="text/javascript" charset="utf-8"></script>
+<script src="/static/js/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="/static/js/skulpt/skulpt.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/static/js/skulpt/skulpt-stdlib.js" type="text/javascript" charset="utf-8"></script>
+{{end}}
+
+{{define "css"}}
+<link rel="stylesheet" href="/static/css/lesson.css" />{{end}}
+{{define "main"}}
+<div class="hero" style="background-color: #164915;">
+    <span>Classes</span>
+</div>
+<div class="objectives">
+    <div class="card">
+        <span class="heading">What you will learn in this lesson...</span>
+        <ul>
+            <li>basics of Python classes</li>
+            <li>create objects</li>
+            <li>work with attributes and methods</li>
+        </ul>
+    </div>
+</div>
+
+<div class="content">
+    <div class="note-cont">
+        <span class="topic">Classes...</span>
+        <p>
+            Classes are a fundamental concept in object-oriented programming (OOP). They allow you to create blueprints
+            for objects, which are instances of those classes. In Python, everything is an object, and classes provide a
+            way to define and create objects with their own attributes and behaviors. In this tutorial, we'll cover the
+            basics of Python classes, including how to define them, create objects from them, and work with attributes
+            and methods.
+        </p>
+        <span class="topic">What is a Class?</span>
+        <p>
+            A class in Python is a blueprint for creating objects. It defines the properties (attributes) and behaviors
+            (methods) that all objects of that class will have. Think of a class as a template or a prototype for
+            creating objects with specific characteristics.
+        </p>
+        <span class="topic">Defining a Class</span>
+        <p>
+            You can define a class in Python using the class keyword followed by the class name and a colon :. Inside
+            the class body, you define the attributes and methods of the class.
+        </p>
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_1">
+class Dog:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def bark(self):
+        print("Woof!")
+        </pre>
+        <div id="runner1" class="runner" style="display: none;">
+            <pre id="output1" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="1">Run Code</button>
+    </div>
+
+    <div class="note-cont">
+        <p>In this example, we define a class named Dog with two attributes (name and age) and one method (bark).</p>
+    </div>
+
+    <div class="note-cont">
+        <span class="topic">Creating Objects (Instances)</span>
+        <p>Once you've defined a class, you can create objects (instances) of that class using the class name followed
+            by parentheses (). This process is called instantiation.</p>
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_2">
+class Dog:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def bark(self):
+        print("Woof!")
+
+dog1 = Dog("Buddy", 3)
+dog2 = Dog("Max", 5) 
+        </pre>
+        <div id="runner2" class="runner" style="display: none;">
+            <pre id="output2" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="2">Run Code</button>
+    </div>
+    <div class="note-cont">
+        <p>In this example, we create two Dog objects named dog1 and dog2, passing arguments for the name and age
+            attributes.</p>
+        <span class="topic">Accessing Attributes</span>
+        <p>You can access the attributes of an object using dot notation (.) followed by the attribute name.</p>
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_3">
+class Dog:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def bark(self):
+        print("Woof!")
+
+dog1 = Dog("Buddy", 3)
+dog2 = Dog("Max", 5)
+
+print(dog1.name)  # Output: Buddy
+print(dog2.age)   # Output: 5
+        </pre>
+        <div id="runner3" class="runner" style="display: none;">
+            <pre id="output3" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="3">Run Code</button>
+    </div>
+
+    <div class="note-cont">
+        <span class="topic">Calling Methods</span>
+        <p>You can call methods of an object using dot notation (.) followed by the method name and parentheses ().</p>
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_4">
+class Dog:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def bark(self):
+        print("Woof!")
+
+dog1 = Dog("Buddy", 3)
+dog2 = Dog("Max", 5)
+
+dog1.bark()  # Output: Woof!
+dog2.bark()  # Output: Woof!
+        </pre>
+        <div id="runner4" class="runner" style="display: none;">
+            <pre id="output4" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="4">Run Code</button>
+    </div>
+
+    <div class="note-cont">
+        <span class="topic">Constructor Method <code>__init__</code></span>
+        <p>The __init__ method is a special method in Python classes called the constructor. It is automatically called
+            when an object is created and is used to initialize the object's attributes. </p>
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_5">
+class Dog:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        </pre>
+        <div id="runner5" class="runner" style="display: none;">
+            <pre id="output5" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="5">Run Code</button>
+    </div>
+
+    <div class="note-cont">
+        <p>
+            In this example, the __init__ method initializes the name and age attributes of the Dog objects.
+        </p>
+        <span class="topic">Instance Methods</span>
+        <p>Instance methods are functions defined within a class that operate on the attributes of an object. They are
+            called on instances of the class and typically take the self parameter as the first argument, which refers
+            to the instance itself.</p>
+    </div>
+
+    <div class="editor-runner">
+        <pre class="editor" id="editor_6">
+class Dog:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def bark(self):
+        print("Woof!")
+        </pre>
+        <div id="runner6" class="runner" style="display: none;">
+            <pre id="output6" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="6">Run Code</button>
+    </div>
+
+    <div class="note-cont">
+        <p>In this example, the bark method is an instance method that prints "Woof!" when called on a Dog object.</p>
+        <span class="topic">Class and Instance Attributes</span>
+        <p>Class attributes are shared among all instances of a class and are defined outside of any method within the
+            class. Instance attributes are specific to each instance and are defined within the __init__ method using
+            self.</p>
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_7">
+class Dog:
+    species = "Canine"  # Class attribute
+
+    def __init__(self, name, age):
+        self.name = name  # Instance attribute
+        self.age = age    # Instance attribute
+        </pre>
+        <div id="runner7" class="runner" style="display: none;">
+            <pre id="output7" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="7">Run Code</button>
+    </div>
+
+    <div class="note-cont">
+        <p>
+            In this example, species is a class attribute, while name and age are instance attributes.
+        </p>
+        <span class="topic">Inheritance</span>
+        <p>
+            Inheritance is a feature of object-oriented programming that allows a class (subclass) to inherit attributes
+            and methods from another class (superclass). This promotes code reusability and allows you to create
+            specialized classes based on existing ones.
+        </p>
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_8">
+class Animal:
+    def __init__(self, species):
+        self.species = species
+
+    def speak(self):
+        pass  # Abstract method
+
+class Dog(Animal):
+    def __init__(self, name, age):
+        super().__init__("Canine")
+        self.name = name
+        self.age = age
+
+    def bark(self):
+        print("Woof!")
+        </pre>
+        <div id="runner8" class="runner" style="display: none;">
+            <pre id="output8" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="8">Run Code</button>
+    </div>
+    <div class="note-cont">
+        <p>In this example, the Dog class inherits from the Animal class and overrides the speak method.</p>
+        <span class="topic">Conclusion</span>
+        <p>Functions are fundamental building blocks in Python programming. They allow you to encapsulate reusable code,
+            making your programs more modular and easier to understand. In this tutorial, we covered the basics of
+            defining functions, calling them, passing arguments, returning values, and various other features of Python
+            functions. With practice and experimentation, you'll become proficient in using functions to write clean and
+            efficient Python code.
+        </p>
+    </div>
+    <div class="next-prev">
+        <a href="/lessons/lesson-4" class="next-prev-a">Previous Lesson</a>
+    </div>
+</div>
+{{end}}
