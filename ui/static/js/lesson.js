@@ -18,18 +18,6 @@ $(document).ready(function () {
         editorsArray.push(window[_name]);
     });
 
-
-    $(window).scroll(function () {
-        var winTop = $(this).scrollTop();
-        var letters = $('.editor');
-
-        letters.each(function () {
-            if ($(this).position().top <= winTop) {
-                console.log(this.id);
-            }
-        });
-    });
-
 });
 
 
@@ -78,10 +66,4 @@ function runExample(btn) {
         document.getElementById("editor_" + dataNo).style.display = "block"
         btn.innerHTML = "Run code"
     }
-}
-
-async function goToNextLesson(url) {
-    form = document.getElementById("progressForm")
-    await form.requestSubmit()
-    window.location.href = `/lessons/${url}`
 }
