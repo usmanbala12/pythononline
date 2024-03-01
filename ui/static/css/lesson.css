@@ -84,6 +84,15 @@ main {
 .topic {
     display: block;
     font-size: 2rem;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.sub-topic {
+    margin-top: 20px;
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 .note-cont {
@@ -105,6 +114,8 @@ main {
 
 .next-prev-btn {
     background-color: transparent;
+    font-size: 25px;
+    font-family: "JetBrains Mono", monospace;
     color: #fff;
     border: none;
 }

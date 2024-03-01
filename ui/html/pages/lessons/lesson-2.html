@@ -13,13 +13,13 @@
 <link rel="stylesheet" href="/static/css/lesson.css" />{{end}}
 {{define "main"}}
 <div class="hero" style="background-color: #911294;">
-    <span>Conditionals</span>
+    <span>Loops and Conditionals</span>
 </div>
 <div class="objectives">
     <div class="card">
         <span class="heading">What you will learn in this lesson...</span>
         <ul>
-            <li>Basics of Conditional statement</li>
+            <li>Basics of Loops and Conditional statements</li>
             <li>Indentation and Blocks</li>
         </ul>
     </div>
@@ -27,7 +27,142 @@
 
 <div class="content">
     <div class="note-cont">
-        <span class="topic">Conditionals...</span>
+        <span class="topic">Control Structures</span>
+        <p>
+            Python control structures are constructs used to control the flow of execution in a Python program. They
+            allow you to make decisions, repeat code blocks, and alter the sequence of execution based on certain
+            conditions. The main control structures in Python include:
+        </p>
+        <ul>
+            <li>
+                <strong>Conditional Statements <code>(if, elif, else)</code>:</strong> Conditional statements are used
+                to execute certain
+                blocks of code based on specified conditions.
+            </li>
+            <li>
+                <strong>Loops <code>(for and while):</code></strong>Loops allow you to execute a block of code
+                repeatedly.
+                <code>for</code>loop: Iterates over a sequence or collection of items.
+            </li>
+            <li>
+                <strong>Loop control statements</strong>
+                <ul>
+                    <li><code>break</code>: Terminates the loop prematurely.</li>
+                    <li><code>continue</code>: Skips the rest of the code inside the loop for the current iteration and
+                        continues with the next iteration.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="note-cont">
+        <span class="topic">Loops</span>
+        <p>Loops in programming are used to execute a block of code repeatedly. Python provides two types of loops: for
+            loops and while loops. In this lesson, we'll cover both types and demonstrate their usage with examples.
+        </p>
+        <span class="sub-topic">
+            For Loops
+        </span>
+        <p>A for loop is used to iterate over a sequence (such as a list, tuple, string, or range) and execute a block
+            of code for each item in the sequence. (Take note of sequences)</p>
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_1">
+fruits = ["apple", "banana", "cherry"]
+for fruit in fruits:
+    print(fruit)
+        </pre>
+        <div id="runner1" class="runner" style="display: none;">
+            <pre id="output1" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="1">Run Code</button>
+    </div>
+    <div class="note-cont">
+        <span class="sub-topic">
+            Using <code>range()</code> function:
+        </span>
+        <p>The range() function generates a sequence of numbers. It's commonly used with for loops to iterate a specific
+            number of times.</p>
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_2">
+for i in range(5):
+    print(i)
+        </pre>
+        <div id="runner2" class="runner" style="display: none;">
+            <pre id="output2" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="2">Run Code</button>
+    </div>
+
+    <div class="note-cont">
+        <span class="sub-topic">
+            <code>while</code> Loops
+        </span>
+        <p>A while loop repeats a block of code as long as a specified condition is true. It's useful when you don't
+            know in advance how many times the loop should run.</p>
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_3">
+num = 1
+while num <= 5:
+    print(num)
+    num += 1
+        </pre>
+        <div id="runner3" class="runner" style="display: none;">
+            <pre id="output3" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="3">Run Code</button>
+    </div>
+
+    <div class="note-cont">
+        <span class="sub-topic">
+            Using <code>break</code> and <code>continue</code>:
+        </span>
+        <ul>
+            <li>
+                break: Terminates the loop prematurely.
+            </li>
+            <li>
+                continue: Skips the rest of the code inside the loop for the current iteration and continues with the
+                next iteration.
+            </li>
+        </ul>
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_4">
+num = 0
+while num < 10:
+    num += 1
+    if num == 5:
+        continue
+    if num == 8:
+        break
+    print(num)
+        </pre>
+        <div id="runner4" class="runner" style="display: none;">
+            <pre id="output4" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="4">Run Code</button>
+    </div>
+
+    <div class="note-cont">
+        <span class="sub-topic">Nested Loops</span>
+        <p>You can also have loops inside other loops. This is called nested loops.</p>
+    </div>
+    <div class="editor-runner">
+        <pre class="editor" id="editor_5">
+for i in range(3):
+    for j in range(2):
+        print(f"i={i}, j={j}")
+        </pre>
+        <div id="runner5" class="runner" style="display: none;">
+            <pre id="output5" style="font-size: 14px;"></pre>
+        </div>
+        <button onclick="runExample(this)" data-no="5">Run Code</button>
+    </div>
+
+    <div class="note-cont">
+        <span class="topic">Conditionals</span>
         <p>
             Conditional statements in Python allow you to control the flow of your program based on certain conditions.
             They enable you to execute specific blocks of code only if certain conditions are met. In this tutorial,
@@ -43,19 +178,20 @@
         </p>
         <span class="topic"><code>if</code> Statement</span>
         <p>
-            The if statement is used to execute a block of code only if a specified condition is True. It follows this
+            The if statement is used to execute a block of code only if a specified condition is True.
+            It follows this
             basic syntax:
         </p>
     </div>
     <div class="editor-runner">
-        <pre class="editor" id="editor_1">
+        <pre class="editor" id="editor_6">
 if condition:
     # Code block to execute if condition is True
         </pre>
-        <div id="runner1" class="runner" style="display: none;">
-            <pre id="output1" style="font-size: 14px;"></pre>
+        <div id="runner6" class="runner" style="display: none;">
+            <pre id="output6" style="font-size: 14px;"></pre>
         </div>
-        <button onclick="runExample(this)" data-no="1">Run Code</button>
+        <button onclick="runExample(this)" data-no="6">Run Code</button>
     </div>
 
     <div class="note-cont">
@@ -65,16 +201,16 @@ if condition:
         </p>
     </div>
     <div class="editor-runner">
-        <pre class="editor" id="editor_2">
+        <pre class="editor" id="editor_7">
 x = 10
 
 if x > 5:
     print("x is greater than 5")
         </pre>
-        <div id="runner2" class="runner" style="display: none;">
-            <pre id="output2" style="font-size: 14px;"></pre>
+        <div id="runner7" class="runner" style="display: none;">
+            <pre id="output7" style="font-size: 14px;"></pre>
         </div>
-        <button onclick="runExample(this)" data-no="2">Run Code</button>
+        <button onclick="runExample(this)" data-no="7">Run Code</button>
     </div>
 
     <div class="note-cont">
@@ -91,7 +227,7 @@ if x > 5:
             spaces) tells Python where the block of code associated with the if statement begins and ends.</p>
     </div>
     <div class="editor-runner">
-        <pre class="editor" id="editor_3">
+        <pre class="editor" id="editor_8">
 if condition:
     # This statement is part of the if block
     # It will be executed if the condition is True
@@ -101,10 +237,10 @@ if condition:
 # It will be executed regardless of the condition
 print("Outside the if block")
         </pre>
-        <div id="runner3" class="runner" style="display: none;">
-            <pre id="output3" style="font-size: 14px;"></pre>
+        <div id="runner8" class="runner" style="display: none;">
+            <pre id="output8" style="font-size: 14px;"></pre>
         </div>
-        <button onclick="runExample(this)" data-no="3">Run Code</button>
+        <button onclick="runExample(this)" data-no="8">Run Code</button>
     </div>
     <div class="note-cont">
         <span class="topic">if...else Statement</span>
@@ -112,16 +248,16 @@ print("Outside the if block")
             code if the condition is False. It follows this syntax:</p>
     </div>
     <div class="editor-runner">
-        <pre class="editor" id="editor_4">
+        <pre class="editor" id="editor_9">
 if condition:
     # Code block to execute if condition is True
 else:
     # Code block to execute if condition is False
         </pre>
-        <div id="runner4" class="runner" style="display: none;">
-            <pre id="output4" style="font-size: 14px;"></pre>
+        <div id="runner9" class="runner" style="display: none;">
+            <pre id="output9" style="font-size: 14px;"></pre>
         </div>
-        <button onclick="runExample(this)" data-no="4">Run Code</button>
+        <button onclick="runExample(this)" data-no="9">Run Code</button>
     </div>
 
     <div class="note-cont">
@@ -129,7 +265,7 @@ else:
             condition is False, the code block following the else statement is executed.</p>
     </div>
     <div class="editor-runner">
-        <pre class="editor" id="editor_5">
+        <pre class="editor" id="editor_10">
 x = 3
 
 if x > 5:
@@ -137,10 +273,10 @@ if x > 5:
 else:
     print("x is not greater than 5")
         </pre>
-        <div id="runner5" class="runner" style="display: none;">
-            <pre id="output5" style="font-size: 14px;"></pre>
+        <div id="runner10" class="runner" style="display: none;">
+            <pre id="output10" style="font-size: 14px;"></pre>
         </div>
-        <button onclick="runExample(this)" data-no="5">Run Code</button>
+        <button onclick="runExample(this)" data-no="10">Run Code</button>
     </div>
 
     <div class="note-cont">
@@ -154,7 +290,7 @@ else:
     </div>
 
     <div class="editor-runner">
-        <pre class="editor" id="editor_6">
+        <pre class="editor" id="editor_11">
 if condition1:
     # Code block to execute if condition1 is True
 elif condition2:
@@ -162,10 +298,10 @@ elif condition2:
 else:
     # Code block to execute if all conditions are False
         </pre>
-        <div id="runner6" class="runner" style="display: none;">
-            <pre id="output6" style="font-size: 14px;"></pre>
+        <div id="runner11" class="runner" style="display: none;">
+            <pre id="output11" style="font-size: 14px;"></pre>
         </div>
-        <button onclick="runExample(this)" data-no="6">Run Code</button>
+        <button onclick="runExample(this)" data-no="11">Run Code</button>
     </div>
     <div class="note-cont">
         <p>This statement provides an alternative to using multiple if statements one after the other. Python evaluates
@@ -173,7 +309,7 @@ else:
             associated with the else statement is executed.</p>
     </div>
     <div class="editor-runner">
-        <pre class="editor" id="editor_7">
+        <pre class="editor" id="editor_12">
 x = 3
 
 if x > 5:
@@ -183,10 +319,10 @@ elif x == 5:
 else:
     print("x is less than 5")
         </pre>
-        <div id="runner7" class="runner" style="display: none;">
-            <pre id="output7" style="font-size: 14px;"></pre>
+        <div id="runner12" class="runner" style="display: none;">
+            <pre id="output12" style="font-size: 14px;"></pre>
         </div>
-        <button onclick="runExample(this)" data-no="7">Run Code</button>
+        <button onclick="runExample(this)" data-no="12">Run Code</button>
     </div>
 
     <div class="note-cont">
@@ -203,7 +339,7 @@ else:
             complex logic by checking multiple conditions in a hierarchical manner.</p>
     </div>
     <div class="editor-runner">
-        <pre class="editor" id="editor_8">
+        <pre class="editor" id="editor_13">
 x = 10
 y = 20
 
@@ -215,10 +351,10 @@ if x > 5:
 else:
     print("x is not greater than 5")
         </pre>
-        <div id="runner8" class="runner" style="display: none;">
-            <pre id="output8" style="font-size: 14px;"></pre>
+        <div id="runner13" class="runner" style="display: none;">
+            <pre id="output13" style="font-size: 14px;"></pre>
         </div>
-        <button onclick="runExample(this)" data-no="8">Run Code</button>
+        <button onclick="runExample(this)" data-no="13">Run Code</button>
     </div>
     <div class="note-cont">
         <p>In this nested example, if x is greater than 5 and y is greater than 10, the first print statement will be
