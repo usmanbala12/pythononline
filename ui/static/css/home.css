@@ -129,3 +129,76 @@ main {
 .lesson-card .lesson-title {
     font-size: 1.3rem;
 }
+
+@media only screen and (max-width: 600px) {
+    .hero {
+        flex-direction: column-reverse;
+    }
+
+    .text-cta {
+        max-width: 100%;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .text-cta>.title {
+        font-size: 18px;
+        font-family: "Inter", sans-serif;
+    }
+
+    .text-cta>.sub-title {
+        font-size: 14px;
+        font-family: "Inter", sans-serif;
+    }
+
+    .cta-button {
+        font-size: 20px;
+    }
+
+    .promises .title,
+    .lesson-list .title {
+        font-size: 1.3rem;
+    }
+
+    .promises .cards {
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 10px;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .lesson-card {
+        display: flex;
+        width: 100%;
+        padding: 10px 25px;
+        justify-content: space-between;
+        align-items: center;
+        color: #fff;
+        margin-block-end: 10px;
+    }
+
+    .lesson-card .text {
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+    }
+
+    .lesson-card .lesson-no {
+        font-weight: 400;
+        font-size: 1.2rem;
+    }
+
+    .lesson-card .lesson-title {
+        font-size: 1rem;
+    }
+
+    .lesson-card svg {
+        width: 15px;
+        height: 25px;
+    }
+
+}

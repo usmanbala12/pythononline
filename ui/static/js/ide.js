@@ -18,7 +18,21 @@ function builtinRead(x) {
     return Sk.builtinFiles["files"][x];
 }
 
-function runit() {
+function runit(event) {
+
+    if (window.innerWidth <= 600) {
+        const runner = document.querySelector('.runner')
+        const visibility = runner.getAttribute("data-visible")
+        if (visibility === "false") {
+            runner.setAttribute("data-visible", true)
+            event.target.innerHTML = "Close"
+        } else {
+            runner.setAttribute("data-visible", false)
+            event.target.innerHTML = "Run"
+        }
+    }
+
+
     var prog = editor.getValue()
     var mypre = document.getElementById("output");
     mypre.style.color = "white"

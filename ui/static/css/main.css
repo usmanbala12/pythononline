@@ -137,7 +137,7 @@ nav>button,
     text-decoration: none;
     display: block;
     height: fit-content;
-    color: #010D07;
+    color: #04351c;
     font-size: 25px;
     margin-inline-end: 20px;
 }
@@ -148,10 +148,14 @@ nav>button,
     background-color: transparent;
 }
 
+.mobile-nav-toggle {
+    display: none;
+}
+
 
 nav a:hover,
 button:hover {
-    color: #0B733F;
+    color: #0dad5d;
     cursor: pointer;
 }
 
@@ -172,4 +176,57 @@ footer {
 footer .text span {
     font-size: 1.5rem;
     font-weight: 500;
+}
+
+@media only screen and (max-width: 600px) {
+    .nav-links {
+        position: fixed;
+        height: 100vh;
+        inset: 0 0 0 30%;
+        z-index: 1000;
+        flex-direction: column;
+        gap: 15px;
+        padding: min(20vh, 10rem) 2rem;
+        background: hsl(0, 0%, 100% / 0.1);
+        backdrop-filter: blur(1em);
+        transform: translateX(100%);
+        transition: transform 350ms ease-out;
+    }
+
+    .po-logo {
+        width: 150px;
+        aspect-ratio: 5 / 1;
+    }
+
+    .nav-links[data-visible="true"] {
+        transform: translateX(0%);
+    }
+
+    nav a,
+    av>button,
+    .btn-logout {
+        font-family: "JetBrains Mono", monospace;
+        text-decoration: none;
+        display: block;
+        height: fit-content;
+        font-size: 25px;
+    }
+
+    .mobile-nav-toggle {
+        display: block;
+        position: absolute;
+        z-index: 9999;
+        border: 0;
+        top: 1rem;
+        right: 1rem;
+    }
+
+    footer .text span {
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+
+    footer p {
+        font-size: 0.8rem;
+    }
 }

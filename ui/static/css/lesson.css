@@ -7,7 +7,7 @@ main {
     height: 250px;
     background-color: #276e4b;
     display: grid;
-    place-content: center;
+    place-items: center;
 }
 
 .hero span {
@@ -16,6 +16,7 @@ main {
     font-family: "Inter", sans-serif;
     font-size: 3rem;
     font-weight: 400;
+    text-align: center;
 }
 
 .objectives {
@@ -38,7 +39,7 @@ main {
 .objectives .heading {
     display: block;
     font-size: 1.5rem;
-    font-weight: 300;
+    font-weight: 400;
     padding: 10px 15px;
     border-bottom: 3px dashed rgb(145, 145, 145);
 }
@@ -79,6 +80,7 @@ main {
 .runner>pre {
     color: #26ff4a !important;
     font-family: "JetBrains Mono", monospace;
+    overflow: scroll;
 }
 
 .topic {
@@ -134,4 +136,47 @@ main {
 
 .next-prev-a:hover {
     color: #79ffbc;
+}
+
+@media only screen and (max-width: 600px) {
+    .hero {
+        height: 150px;
+    }
+
+    .hero span {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .objectives .card {
+        width: 80%;
+        height: 70%;
+    }
+
+    .objectives .heading {
+        font-size: 1rem;
+    }
+
+    .editor-runner {
+        width: 90%;
+    }
+
+    .topic {
+        font-size: 1.5rem;
+    }
+
+    .sub-topic {
+        font-size: 1.2rem;
+    }
+
+    p,
+    ul {
+        font-size: 1rem;
+    }
+
+    .next-prev-btn,
+    .next-prev-a {
+        font-size: 15px;
+        margin-inline-end: 10px;
+    }
 }

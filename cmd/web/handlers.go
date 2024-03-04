@@ -74,25 +74,22 @@ func (app *application) updateProgress(w http.ResponseWriter, r *http.Request) {
 
 	var form progressForm
 
-	err := app.decodePostForm(r, &form)
+	_ = app.decodePostForm(r, &form)
 
-	if err != nil {
-		app.clientError(w, http.StatusBadRequest)
-		return
-	}
+	if app.isAuthenticated(r) {
+		id := app.sessionManager.GetInt(r.Context(), "authenticatedUserID")
 
-	id := app.sessionManager.GetInt(r.Context(), "authenticatedUserID")
+		p, _ := app.progress.Get(id)
 
-	p, _ := app.progress.Get(id)
+		pLNo, _ := strconv.Atoi(strings.TrimPrefix(p.LastLesson, "lesson-"))
+		formLno, _ := strconv.Atoi(form.LastLesson)
 
-	pLNo, _ := strconv.Atoi(strings.TrimPrefix(p.LastLesson, "lesson-"))
-	formLno, _ := strconv.Atoi(form.LastLesson)
-
-	if formLno > pLNo {
-		app.infoLog.Output(1, "progress updated")
-		lNo := "lesson-" + form.LastLesson
-		pNo := "editor-" + form.LastPosition
-		app.progress.Update(lNo, pNo, id)
+		if formLno > pLNo {
+			app.infoLog.Output(1, "progress updated")
+			lNo := "lesson-" + form.LastLesson
+			pNo := "editor-" + form.LastPosition
+			app.progress.Update(lNo, pNo, id)
+		}
 	}
 
 	http.Redirect(w, r, form.Next, http.StatusSeeOther)

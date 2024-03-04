@@ -11,7 +11,7 @@
 {{end}}
 
 {{define "main"}}
-<button onclick="runit()" class="run-btn">Run program</button>
+<button class="run-btn" onclick="runit(event)">Run</button>
 <div class="ide">
     <pre id="editor" style="font-size: 14px;">
 # Function to demonstrate printing pattern
@@ -35,7 +35,7 @@ def pypart(n):
 n = 5
 pypart(n)
     </pre>
-    <div class="runner">
+    <div class="runner" data-visible="false">
         <p style="font-size: 14px;">user@python-online:~$</p>
         <pre id="output" style="font-size: 14px;"></pre>
     </div>
