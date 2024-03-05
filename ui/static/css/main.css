@@ -187,10 +187,10 @@ footer .text span {
         flex-direction: column;
         gap: 15px;
         padding: min(20vh, 10rem) 2rem;
-        background: hsl(0, 0%, 100% / 0.1);
-        backdrop-filter: blur(1em);
+        background: hsl(0, 0%, 100%);
         transform: translateX(100%);
         transition: transform 350ms ease-out;
+        border: 1px solid #0dad5d;
     }
 
     .po-logo {

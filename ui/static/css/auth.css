@@ -76,3 +76,19 @@ input[type=submit]:hover {
 .switch:hover {
     color: #113523;
 }
+
+@media only screen and (max-width: 600px) {
+    .form-side {
+        border-left: 2px solid #0f9c55;
+    }
+
+    main {
+        height: 90vh;
+        display: grid;
+        place-items: center;
+    }
+
+    .coder {
+        display: none;
+    }
+}
